@@ -1,6 +1,6 @@
 FROM alpine:3.6
 
-ENV NPM_CONFIG_LOGLEVEL=info NODE_VERSION=8.5.0 YARN_VERSION=1.0.2
+ENV NPM_CONFIG_LOGLEVEL=info NODE_VERSION=8.9.1 YARN_VERSION=1.3.2
 
 RUN addgroup -g 1000 node \
     && adduser -u 1000 -G node -s /bin/sh -D node \
@@ -26,7 +26,9 @@ RUN addgroup -g 1000 node \
     B9AE9905FFD7803F25714661B63B535A4C206CA9 \
     C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8 \
     56730D5401028683275BD23C23EFEFE93C4CFFFE \
+    77984A986EBC2AA786BC0F66B01FBB92821C587A \
   ; do \
+    gpg --keyserver pool.sks-keyservers.net  --recv-keys "$key" || \
     gpg --keyserver pgp.mit.edu --recv-keys "$key" || \
     gpg --keyserver keyserver.pgp.com --recv-keys "$key" || \
     gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ; \
@@ -48,6 +50,7 @@ RUN addgroup -g 1000 node \
     && for key in \
       6A010C5166006599AA17F08146C2130DFD2497F5 \
     ; do \
+      gpg --keyserver pool.sks-keyservers.net  --recv-keys "$key" || \
       gpg --keyserver pgp.mit.edu --recv-keys "$key" || \
       gpg --keyserver keyserver.pgp.com --recv-keys "$key" || \
       gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key" ; \
