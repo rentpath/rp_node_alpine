@@ -1,6 +1,6 @@
 FROM alpine:3.7
 
-ENV NPM_CONFIG_LOGLEVEL=info NODE_VERSION=10.4.1 YARN_VERSION=1.7.0
+ENV NPM_CONFIG_LOGLEVEL=info NODE_VERSION=10.12.0 YARN_VERSION=1.10.1
 
 RUN addgroup -g 1000 node \
     && adduser -u 1000 -G node -s /bin/sh -D node \
@@ -26,6 +26,7 @@ RUN addgroup -g 1000 node \
     B9AE9905FFD7803F25714661B63B535A4C206CA9 \
     56730D5401028683275BD23C23EFEFE93C4CFFFE \
     77984A986EBC2AA786BC0F66B01FBB92821C587A \
+    8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600 \
   ; do \
     gpg --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" || \
     gpg --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" || \
