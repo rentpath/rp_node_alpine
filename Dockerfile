@@ -1,6 +1,6 @@
 FROM alpine:3.9
 
-ENV NPM_CONFIG_LOGLEVEL=info NODE_VERSION=12.0.0 YARN_VERSION=1.15.2
+ENV NPM_CONFIG_LOGLEVEL=info NODE_VERSION=12.2.0 YARN_VERSION=1.16.0
 
 RUN addgroup -g 1000 node \
     && adduser -u 1000 -G node -s /bin/sh -D node \
