@@ -1,13 +1,19 @@
-# rp_node_alpine
+Docker base for node projects
 
-Steps to publish:
+# UPDATING THE BASE IMAGE
 
-1. `$ export RP_NODE_ALPINE_VERSION=node-v<REPLACE ME>_yarn-v<REPLACE ME>`
-1. `$ export RP_NODE_ALPINE_REPO=rentpath/rp_node_alpine`
-1. `$ export RP_NODE_ALPINE_IMAGE=$RP_NODE_ALPINE_REPO:$RP_NODE_ALPINE_VERSION`
-1. `$ export RP_NODE_ALPINE_LATEST=$RP_NODE_ALPINE_REPO:latest`
-1. `$ docker build . -t $RP_NODE_ALPINE_IMAGE`
-1. `$ docker trust sign $RP_NODE_ALPINE_IMAGE`
-1. `$ docker tag $RP_NODE_ALPINE_IMAGE $RP_NODE_ALPINE_LATEST`
-1. `$ docker trust sign $RP_NODE_ALPINE_LATEST`
-1. `$ docker push $RP_NODE_ALPINE_LATEST`
+## Updating the Alpine version
+
+Edit `.alpine-version`.
+
+## Updating the NodeJS version
+
+Edit `.node-version`.
+
+## Updating the Yarn version
+
+Edit `.yarn-version`.
+
+# RELEASING A NEW BASE IMAGE
+
+The `release` workflow should build, push, tag, and release the new image.
